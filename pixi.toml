@@ -1,0 +1,15 @@
+[workspace]
+authors = ["Sander Kapinga <s.kapinga@wsrl.nl>"]
+channels = ["conda-forge"]
+name = "assemblagetool"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+numpy = ">=2.4.0,<3"
+scipy = ">=1.16.3,<2"
+pandas = ">=2.3.3,<3"
+openpyxl = ">=3.1.5,<4"
+pytest = ">=9.0.2,<10"
