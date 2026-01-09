@@ -7,7 +7,7 @@ def bepaal_N_vak(L:float, a: float, dL: float) -> float:
     r"""Bepaalt de opschaalfactor per vak.
 
     .. math::
-        N_{vak} = max(1, 1.0 + \frac{a \cdot L}{\Delta L})
+        N_{vak} = max(1, \frac{a \cdot L}{\Delta L})
 
     Parameters
     ----------
@@ -30,8 +30,10 @@ def bepaal_N_vak(L:float, a: float, dL: float) -> float:
 
     Examples
     --------
-    >>> bepaal_N_vak(300.0, 0.5, 300.0)
-    1.5
+    >>> bepaal_N_vak(600.0, 1.0, 300.0)
+    2.0
+    >>> bepaal_N_vak(400.0, 0.5, 300.0)
+    1.0
     """
     
     if a < 0:
@@ -40,7 +42,7 @@ def bepaal_N_vak(L:float, a: float, dL: float) -> float:
     if L < 0 or dL < 0:
         raise ValueError("De lengte L en dL moeten groter zijn dan 0.")
 
-    N_vak = max(1, 1.0 + (a * L) / dL)
+    N_vak = max(1, (a * L) / dL)
     return N_vak
 
 
